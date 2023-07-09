@@ -115,3 +115,4 @@ https://www.youtube.com/watch?v=zh9CsKqEhOM
 https://github.com/L10N37/OOP-SVG-Logo-Maker
 https://github.com/rmessett15/SVG-Logo-Maker
 https://svgjs.dev/docs/3.0/
+https://www.rdocumentation.org/packages/omsvg/versions/0.1.0/topics/SVG
