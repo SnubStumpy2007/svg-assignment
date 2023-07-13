@@ -1,115 +1,47 @@
-# svg-assignment
-SVG Generator - Node.js
-This is a SVG (Scalable Vector Graphics) generator written in Node.js, utilizing object-oriented programming principles. With this module, you can dynamically create SVG files programmatically, making it easier to generate complex and customizable vector graphics.
+## SVG Generator
+The SVG Generator is a command-line tool that allows you to generate SVG images based on user input. It prompts the user for text, text color, shape, and shape color, and generates an SVG image accordingly.
 
-Features
-Generate SVG files using JavaScript code
-Support for various SVG elements, such as rectangles, circles, lines, text, etc.
-Specify attributes like color, size, position, and style for each SVG element
-Group elements together to create complex shapes
-Export the generated SVG to a file or retrieve it as a string
-Installation
-To use the SVG Generator module in your Node.js project, you need to install it using npm:
+# Prerequisites
+Before running the SVG Generator, ensure that you have the following prerequisites installed on your system:
 
-bash
-Copy code
-npm install svg-generator
-Usage
-First, require the svg-generator module in your Node.js application:
+Node.js (version 14 or above)
+npm (Node Package Manager)
 
-javascript
-Copy code
-const { SVG, Rectangle, Circle, Line, Text, Group } = require('svg-generator');
-Creating an SVG
-To create an SVG object, you can use the SVG class:
+# Installation
+1. Clone the repository or download the project files.
+2. Open a terminal or command prompt and navigate to the project directory.
+3. Install the project dependencies by running the following command:
+npm install
 
-javascript
-Copy code
-const svg = new SVG({ width: 500, height: 300 });
-Adding Elements
-You can add various SVG elements to the SVG object, such as rectangles, circles, lines, text, etc. Each element has its own class, like Rectangle, Circle, Line, Text, and Group. Here's an example of adding a rectangle and a circle to the SVG:
+# Usage
+Open a terminal or command prompt and navigate to the project directory.
 
-javascript
-Copy code
-const rectangle = new Rectangle({
-  x: 50,
-  y: 50,
-  width: 200,
-  height: 100,
-  fill: 'blue',
-});
+Run the SVG Generator script by executing the following command:
 
-const circle = new Circle({
-  cx: 150,
-  cy: 200,
-  r: 50,
-  fill: 'red',
-});
+node index.js
+Follow the prompts to enter the desired text, text color, shape, and shape color.
 
-svg.addElement(rectangle);
-svg.addElement(circle);
-Grouping Elements
-You can group multiple elements together using the Group class. This allows you to create more complex shapes and apply transformations to multiple elements simultaneously:
+Once all the input is provided, the SVG image will be generated and saved as logo.svg in the project directory.
 
-javascript
-Copy code
-const group = new Group();
-group.addElement(rectangle);
-group.addElement(circle);
-svg.addElement(group);
-Exporting SVG
-To export the generated SVG as a file, use the exportToFile method:
+# Customization
+You can customize the size of the generated SVG image by modifying the svgContainer.size() method in the generateSVG function in the index.js file.
 
-javascript
-Copy code
-svg.exportToFile('output.svg');
-To retrieve the SVG as a string, use the exportToString method:
+Feel free to modify the code to add more shapes or customize the positioning and styling of the elements according to your requirements.
 
-javascript
-Copy code
-const svgString = svg.exportToString();
-console.log(svgString);
-Examples
-Here's an example that generates an SVG with a rectangle, a circle, and a line:
+# Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvement, please submit an issue or a pull request on the project repository.
 
-javascript
-Copy code
-const { SVG, Rectangle, Circle, Line } = require('svg-generator');
+# License
+The SVG Generator is released under the MIT License.
 
-const svg = new SVG({ width: 500, height: 300 });
+# Acknowledgements
+The SVG Generator script is built using the following libraries:
 
-const rectangle = new Rectangle({
-  x: 50,
-  y: 50,
-  width: 200,
-  height: 100,
-  fill: 'blue',
-});
+inquirer: For interactive command-line prompts.
+svgdom: A server-side SVG implementation for Node.js.
+svg.js: A lightweight library for manipulating SVG elements.
 
-const circle = new Circle({
-  cx: 150,
-  cy: 200,
-  r: 50,
-  fill: 'red',
-});
-
-const line = new Line({
-  x1: 0,
-  y1: 0,
-  x2: 500,
-  y2: 300,
-  stroke: 'black',
-  'stroke-width': 2,
-});
-
-svg.addElement(rectangle);
-svg.addElement(circle);
-svg.addElement(line);
-
-svg.exportToFile('output.svg');
-License
-This SVG Generator module is licensed under the MIT License.
-# sources
+And the following sources.
 https://www.youtube.com/watch?v=GJYMcLus3v0
 https://www.youtube.com/watch?v=zh9CsKqEhOM
 https://github.com/L10N37/OOP-SVG-Logo-Maker
@@ -119,3 +51,7 @@ https://www.rdocumentation.org/packages/omsvg/versions/0.1.0/topics/SVG
 https://nodejs.org/api/fs.html#promises-api
 https://www.w3schools.com/js/js_switch.asp
 https://www.npmjs.com/package/svgdom
+
+
+# Contact
+If you have any questions or inquiries, please contact Nick Stypinski at joshua192007@gmail.com.

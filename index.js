@@ -6,14 +6,17 @@ const SVG = require('svg.js')(window);
 const fs = require('fs');
 const path = require('path');
 
+// Function to generate SVG code based on user input
 function generateSVG(text, textColor, shape, shapeColor) {
   const svgContainer = SVG(window.document.documentElement);
   const svg = svgContainer.size(300, 200);
 
+  // Create text element and set its position and color
   const textElement = svg.text(text).move(50, 100);
   textElement.fill(textColor);
 
   let shapeElement;
+  // Create shape element based on the chosen shape and set its position and color
   switch (shape) {
     case 'Circle':
       shapeElement = svg.circle(100);
@@ -29,9 +32,11 @@ function generateSVG(text, textColor, shape, shapeColor) {
   }
   shapeElement.move(150, 50).fill(shapeColor);
 
+  // Return the SVG code as a string
   return svgContainer.svg();
 }
 
+// Prompt the user for input using inquirer
 inquirer
   .prompt([
     {
@@ -58,6 +63,7 @@ inquirer
     },
   ])
   .then(answers => {
+    // Generate SVG code based on user input
     const svgCode = generateSVG(
       answers.text,
       answers.textColor,
@@ -65,6 +71,7 @@ inquirer
       answers.shapeColor
     );
 
+    // Save SVG code to a file
     fs.writeFile('logo.svg', svgCode, err => {
       if (err) {
         console.log('Error saving file', err);
