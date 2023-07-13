@@ -1,5 +1,6 @@
-const SVG = require('svg.js');
 const inquirer = require('inquirer');
+const SVG = require('svg.js');
+
 const fs = require('fs');
 const path = require('path');
 
@@ -59,4 +60,3 @@ inquirer
 .catch(err => {
     console.log('Error saving', err)
 })
-// Generate the files.
