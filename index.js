@@ -1,5 +1,10 @@
 const inquirer = require('inquirer');
-const SVG = require('svg.js');
+const { createSVGWindow } = require('svgdom');
+const window = createSVGWindow()
+const SVG = require('svg.js')(window)
+const document = window.document
+
+// const canvas = SVG(document.documentElement)
 
 const fs = require('fs');
 const path = require('path');
@@ -30,7 +35,7 @@ function generateSVG(text, textColor, shape, shapeColor) {
   
     // Return the SVG code as a string
     return svg.svg();
-  }
+}
 
 
 inquirer
@@ -55,7 +60,7 @@ inquirer
         {
             type: 'input',
             name: 'shapeColor',
-            message: 'Enter the shape color (hexadecimal or keyword',
+            message: 'Enter the shape color (hexadecimal or keyword)',
         },
     ])
 .then(answers => {
@@ -69,12 +74,12 @@ inquirer
     // Save SVG code to file
     fs.writeFile('logo.svg', svgCode, err => {
         if (err) {
-            console.log('Error saving file', err)
+            console.log('Error saving file', err);
         } else {
-            console.log('Success.')
+            console.log('Success.');
         }
-    })
+    });
 })
 .catch(err => {
-    console.log('Error saving', err)
-})
+    console.log('Error saving', err);
+});
