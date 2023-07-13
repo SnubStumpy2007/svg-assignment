@@ -8,40 +8,35 @@ function generateSVG(text, textColor, shape, shapeColor) {
   const svg = SVG(document.documentElement);
 }
 
-// initialize SVG.js
-var draw = SVG().addTo('body')
-
-// draw pink square
-draw.rect(100, 100).move(100, 50).fill('#f06')
 
 
 inquirer
     .prompt([
         {
-            type: input,
+            type: 'input',
             name: 'text',
             message: 'Enter Text (up to three characters)',
             validate: input => input.length <= 3,
         },
         {
-            type: input,
+            type: 'input',
             name: 'textColor',
             message: 'Enter your choice of color using hexidecimal codes or a keyword',
         },
         {
-            type: input,
+            type: 'input',
             name: 'shape',
             message: 'Choose a shape from the list',
             choices: ['Circle', 'Triangle', 'Square'],
         },
         {
-            type: input,
+            type: 'input',
             name: 'shapeColor',
             message: 'Enter the shape color (hexadecimal or keyword',
         },
     ])
 .then(answers => {
-    const svgCode = generageSVG(
+    const svgCode = generateSVG(
         answers.text,
         answers.textColor,
         answers.shape,
