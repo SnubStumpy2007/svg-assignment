@@ -2,9 +2,8 @@ const inquirer = require('inquirer');
 const { createSVGWindow } = require('svgdom');
 const window = createSVGWindow();
 const SVG = require('svg.js')(window);
-
 const fs = require('fs');
-const path = require('path');
+
 
 // Function to generate SVG code based on user input
 function generateSVG(text, textColor, shape, shapeColor) {
