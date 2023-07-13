@@ -17,8 +17,8 @@ npm install
 Open a terminal or command prompt and navigate to the project directory.
 
 Run the SVG Generator script by executing the following command:
-
 node index.js
+
 Follow the prompts to enter the desired text, text color, shape, and shape color.
 
 Once all the input is provided, the SVG image will be generated and saved as logo.svg in the project directory.
