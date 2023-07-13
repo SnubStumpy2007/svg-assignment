@@ -117,3 +117,4 @@ https://github.com/rmessett15/SVG-Logo-Maker
 https://svgjs.dev/docs/3.0/
 https://www.rdocumentation.org/packages/omsvg/versions/0.1.0/topics/SVG
 https://nodejs.org/api/fs.html#promises-api
+https://www.w3schools.com/js/js_switch.asp
