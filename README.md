@@ -1,45 +1,42 @@
-## SVG Generator
-The SVG Generator is a command-line tool that allows you to generate SVG images based on user input. It prompts the user for text, text color, shape, and shape color, and generates an SVG image accordingly.
+## SVG Shape Generator
+This is a Node.js application that generates SVG code based on user input. It allows the user to choose a shape (circle, triangle, or square), enter text (up to three characters), specify text color and shape color, and saves the generated SVG code to a file.
 
 # Prerequisites
-Before running the SVG Generator, ensure that you have the following prerequisites installed on your system:
+Before running this application, make sure you have the following prerequisites installed:
 
-Node.js (version 14 or above)
-npm (Node Package Manager)
+Node.js
+NPM (Node Package Manager)
 
 # Installation
-1. Clone the repository or download the project files.
-2. Open a terminal or command prompt and navigate to the project directory.
-3. Install the project dependencies by running the following command:
+Clone this repository to your local machine.
+
+Open a terminal and navigate to the project's directory.
+
+Run the following command to install the required dependencies:
 npm install
 
 # Usage
-Open a terminal or command prompt and navigate to the project directory.
-
-Run the SVG Generator script by executing the following command:
+To run the SVG Shape Generator, follow these steps:
+1. Open a terminal and navigate to the project's directory.
+2. Run the following command:
 node index.js
 
-Follow the prompts to enter the desired text, text color, shape, and shape color.
 
-Once all the input is provided, the SVG image will be generated and saved as logo.svg in the project directory.
+You will be prompted to enter the following information:
+Text: Enter up to three characters for the text to be displayed in the shape.
+Text Color: Enter the color of the text using hexadecimal codes or a keyword.
+Shape: Choose a shape from the provided list (circle, triangle, or square).
+Shape Color: Enter the color of the shape using hexadecimal codes or a keyword.
+After providing the input, the application will generate the SVG code based on the user's choices and save it to a file named logo.svg in the dist directory.
 
 # Customization
-You can customize the size of the generated SVG image by modifying the svgContainer.size() method in the generateSVG function in the index.js file.
+You can customize the application by modifying the code in index.js:
 
-Feel free to modify the code to add more shapes or customize the positioning and styling of the elements according to your requirements.
-
-# Contributing
-Contributions are welcome! If you find any issues or have suggestions for improvement, please submit an issue or a pull request on the project repository.
-
-# License
-The SVG Generator is released under the MIT License.
-
-# Acknowledgements
-The SVG Generator script is built using the following libraries:
-
-inquirer: For interactive command-line prompts.
-svgdom: A server-side SVG implementation for Node.js.
-svg.js: A lightweight library for manipulating SVG elements.
+Add or remove shapes by extending the functionality of the Circle, Square, and Triangle classes in the lib/classes.js file.
+Adjust the input prompts or validation rules using the inquirer library in the index.js file.
+Change the output file path and name by modifying the fs.writeFile function in the index.js file.
+License
+This project is licensed under the MIT License. Feel free to use and modify the code for your own purposes.
 
 And the following sources.
 https://www.youtube.com/watch?v=GJYMcLus3v0
@@ -51,6 +48,7 @@ https://www.rdocumentation.org/packages/omsvg/versions/0.1.0/topics/SVG
 https://nodejs.org/api/fs.html#promises-api
 https://www.w3schools.com/js/js_switch.asp
 https://www.npmjs.com/package/svgdom
+Tutor Jose Lopez
 
 
 # Contact

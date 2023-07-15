@@ -1,19 +1,11 @@
 const inquirer = require('inquirer');
-const { createSVGWindow } = require('svgdom');
-const window = createSVGWindow();
-const SVG = require('svg.js')(window);
+const {Circle, Square, Triangle} =  require('./lib/classes')
 const fs = require('fs');
 
 
 // Function to generate SVG code based on user input
-function generateSVG(text, textColor, shape, shapeColor) {
-  const svgContainer = SVG(window.document.documentElement);
-  const svg = svgContainer.size(300, 200);
-
-  // Create text element and set its position and color
-  const textElement = svg.text(text).move(50, 100);
-  textElement.fill(textColor);
-
+function generateSVG() {
+ 
   let shapeElement;
   // Create shape element based on the chosen shape and set its position and color
   switch (shape) {
@@ -62,16 +54,26 @@ inquirer
     },
   ])
   .then(answers => {
-    // Generate SVG code based on user input
-    const svgCode = generateSVG(
-      answers.text,
-      answers.textColor,
-      answers.shape,
-      answers.shapeColor
-    );
+
+    let shapeElement;
+  // Create shape element based on the chosen shape and set its position and color
+  switch ( answers.shape) {
+    case 'Circle':
+      shapeElement = new Circle(answers.text, answers.textColor,  answers.shapeColor);
+      break;
+    case 'Triangle':
+      shapeElement = new Triangle(answers.text, answers.textColor,  answers.shapeColor);
+      break;
+    case 'Square':
+      shapeElement = new Square(answers.text, answers.textColor,  answers.shapeColor);
+      break;
+    default:
+      break;
+  }
+ 
 
     // Save SVG code to a file
-    fs.writeFile('logo.svg', svgCode, err => {
+    fs.writeFile('./dist/logo.svg', shapeElement.render(), err => {
       if (err) {
         console.log('Error saving file', err);
       } else {

@@ -1,8 +1,21 @@
 {
+  "name": "svg-assignment",
+  "version": "1.0.0",
+  "description": "The SVG Generator is a command-line tool that allows you to generate SVG images based on user input. It prompts the user for text, text color, shape, and shape color, and generates an SVG image accordingly.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@svgdotjs/svg.js": "^3.2.0",
-    "inquirer": "^8.0.0",
-    "svg.js": "^2.7.1",
-    "svgdom": "^0.1.14"
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1"
   }
 }
